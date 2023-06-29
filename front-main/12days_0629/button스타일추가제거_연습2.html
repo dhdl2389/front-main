@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="mybtn">버튼</div>
+    <button onclick="style1()">배경색</button>
+    <button onclick="style2()">배경이미지</button>
+    <button onclick="style3()">이미지배경색없애기</button>
+    <button onclick="style4()">이미지배경없애기</button>
+    <button onclick="style5()">내용바꾸기</button>
+
+    <script>
+      let mybtn = document.getElementById("mybtn");
+
+      function style1() {
+        mybtn.style.width = "100px";
+        mybtn.style.height = "50px";
+        mybtn.style.backgroundColor = "green";
+        mybtn.style.backgroundImage = "none";
+      }
+
+      function style2() {
+        mybtn.style.width = "100px";
+        mybtn.style.height = "50px";
+        mybtn.style.backgroundImage =
+          "url(https://image.dongascience.com/Photo/2017/10/15088140600196.png)";
+        mybtn.style.backgroundSize = "cover";
+        mybtn.style.backgroundPosition = "center";
+      }
+
+      function style3() {
+        mybtn.style.backgroundColor = "transparent";
+      }
+
+      function style4() {
+        mybtn.style.backgroundImage = "none";
+      }
+
+      function style5() {
+        let mybtn = document.getElementById("mybtn");
+        mybtn.innerHTML = "새로운내용";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+           태그 선택자
+           클래스 선택자 : 특정클래스를 가진 요소(태그)를 선택함, 중복가능
+           선택방법 :  .클래스이름
+            */
+      .login-wrap {
+        width: 400px;
+        padding: 20px;
+        border: 1px solid black;
+        margin: 0 auto;
+      }
+
+      .login-img-wrap {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 0 auto;
+      }
+
+      .login-info-wrap {
+        width: 300px;
+        padding: 20px;
+        margin: 0 auto;
+        border: 1px solid black;
+      }
+
+      input {
+        width: 100px;
+        height: 30px;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        border: 0px;
+        border-radius: 5px;
+        background-color: antiquewhite;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 전체영역 -->
+    <div class="login-wrap">
+      <!-- 로그인 이미지영역 -->
+      <div class="login-img-wrap"></div>
+      <!-- 로그인정보입력 영영 -->
+      <div class="login-info-wrap">
+        <input type="text" />
+        <input type="text" />
+        <button>로그인</button>
+      </div>
+    </div>
+  </body>
+</html>

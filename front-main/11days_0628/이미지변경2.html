@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="imgs/boy.png" onclick="changeImg()" id="child" />
+
+    <script>
+      let child = document.getElementById("child");
+      let isToggle = true;
+      function changeImg() {
+        // console.log(isToggle);
+        // alert(child);
+        // child.src = "imgs/girl.png";
+        if (isToggle) {
+          child.src = "imgs/girl.png";
+        } else {
+          child.src = "imgs/boy.png";
+        }
+        isToggle = !isToggle;
+      }
+      //   let flag = true;
+
+      // alert("asfdsadf");
+      //이미지태그  선택
+      //src 속성+
+    </script>
+  </body>
+</html>

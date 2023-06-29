@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>이미지 변경하기</h2>
+
+    <img src="imgs/boy.png" id="child" />
+    <button onclick="changeImg()" id="child">이미지 변경하기</button>
+
+    <script>
+      function changeImg() {
+        // alert("aslkdfjs");
+        // 이미지태그 선택
+        // 이미지의 속성을 변경 src속성
+        let child = document.getElementById("child");
+        alert(child);
+        child.src = "imgs/girl.png";
+      }
+    </script>
+  </body>
+</html>

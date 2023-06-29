@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .field {
+        border: 1px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 50px;
+        margin: 30px 0px;
+      }
+      .A {
+        background-color: darkkhaki;
+      }
+      .B {
+        background-color: red;
+      }
+      .C {
+        background-color: aqua;
+      }
+      .A > img {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 40px;
+        top: 40px;
+      }
+      .B > img {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 40px;
+        top: 122px;
+      }
+      .C > img {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 40px;
+        top: 205px;
+      }
+      a {
+        /* border: 1px solid black; */
+        border-radius: 20px;
+        position: absolute;
+        width: 300px;
+        height: 50px;
+        left: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="field A">
+        Facebook login
+        <img
+          src="https://e7.pngegg.com/pngimages/213/828/png-clipart-facebook-logo-facebook-messenger-logo-social-media-icon-facebook-icon-blue-text-thumbnail.png"
+        />
+        <a href="https://www.facebook.com"></a>
+      </div>
+      <div class="field B">
+        Google login
+        <img
+          src="data:image/png;base64,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"
+        />
+        <a href="https://www.google.co.kr"></a>
+      </div>
+      <div class="field C">
+        Twitter login
+        <img
+          src="data:image/png;base64,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"
+        />
+        <a href="https://www.twitter.com"></a>
+      </div>
+    </div>
+  </body>
+</html>

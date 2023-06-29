@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .footer {
+        height: 500px;
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+      }
+      .item1 {
+        height: 200px;
+        /* border: 1px solid black; */
+        display: flex;
+        list-style: none;
+      }
+      .item2 {
+        height: 200px;
+        /* border: 1px solid black; */
+        display: flex;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="footer">
+      <div class="item1">
+        <img
+          src="data:image/png;base64,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"
+          width="15%"
+          height="40%"
+        />
+        <ui>
+          <li><h3>롯데쇼핑 주식회사</h3></li>
+          <li>대표이사&nbsp;:&nbsp;김사무엘상현, 정준호, 강성현</li>
+          <li>
+            주소&nbsp;:&nbsp;서울특별시 송파구 올림픽로 300 롯데월드타워 26층
+          </li>
+          <li>
+            사업자등록번호&nbsp;:&nbsp;529-8-00774(롯데쇼핑(주)e커머스사업부)
+          </li>
+          <li>
+            통신판매업 신고&nbsp;:&nbsp;서울송파 제0158호<a href=""
+              >사업자 정보 확인</a
+            >
+          </li>
+          <li>호스팅 서비스사업자&nbsp;:&nbsp;롯데쇼핑(주)e커머스 사업부</li>
+          <br />
+          <li><h4>롯데쇼핑 e커머스 사업부 에스크로</h4></li>
+          <li>
+            고객님의 안전거래를 위해 현금 등으로 결제 시 결제금액 전액에 대해
+          </li>
+          <li>소비자 피해 방지 서비스를 이용합니다.</li>
+        </ui>
+        <div class="item2">
+          <ui>
+            <li><h3>고객센터 1899-7000(유로)</h3></li>
+            <li><a href="">분쟁해결기준</a></li>
+            <li>
+              <button><a href="">FAQ보기</a></button
+              ><button><a href="">1:1문의하기</a></button
+              ><button><a href="">고객센터</a></button>
+            </li>
+            <br />
+            <li><h3>전자금융거래 분쟁 담당</h3></li>
+            <li>Tel&nbsp;:&nbsp;1899-7000(유로)</li>
+            <li>E-mail&nbsp;:&nbsp;<a href="">lotteon@lotte.net</a></li>
+            <li><a href="">안전거래센터</a></li>
+            <br />
+            <li>
+              <h3>콘텐츠사업진흥법에 의한 콘텐츠보호안내</h3>
+              <a href="">자세히보기</a>
+            </li>
+          </ui>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

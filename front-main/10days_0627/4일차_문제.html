@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let result;
+      let i = 0;
+      while (i < 3) {
+        let random = parseInt(prompt("1~100숫자를 입력하세요"));
+        let number = 50;
+        if (random == number) {
+          result = "bingo";
+          alert(result);
+          break;
+        } else if (random < number) {
+          result = "up";
+        } else {
+          random > number;
+          result = "down";
+        }
+        i++;
+        alert(result);
+      }
+    </script>
+  </body>
+</html>

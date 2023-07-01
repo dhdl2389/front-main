@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        position: relative;
+        width: 100%;
+        height: 192px;
+        /* border: 1px solid black; */
+        border-top: 4px solid #6ec953;
+        margin-top: -8px;
+        font-family: "돋움", Dotum, "맑은 고딕", "Malgun Gothic", "Apple Gothic",
+          sans-serif;
+      }
+      .header {
+        /* border: 1px solid black; */
+        width: 1008px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        margin: 0 auto;
+        margin-top: 7px;
+      }
+
+      .line {
+        /* 1px아래 단위 설정 불가 흐리게해서 착시 이용 */
+        width: 100%;
+        margin-bottom: -40px;
+        border-bottom: 1px solid;
+        margin-top: 7px;
+      }
+
+      .w0_2 {
+        opacity: 0.1;
+      }
+
+      .ticket a {
+        text-decoration: none;
+        color: gray;
+        font-weight: 300;
+        font-size: 15px;
+      }
+      .ticket a:hover {
+        color: #6ec953;
+        font-weight: bolder;
+        font-size: 15px;
+      }
+
+      .nav ul {
+        list-style: none;
+      }
+
+      .nav li {
+        display: inline-block;
+        margin-left: 20px;
+      }
+
+      .nav li a {
+        text-decoration: none;
+        font-size: 12px;
+        color: gray;
+        font-weight: 100;
+      }
+
+      .nav li a:hover {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+      }
+      .body {
+        /* border: 1px solid black; */
+        width: 1008px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      .logo {
+        content: url(https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png);
+        width: 142px;
+        height: 99px;
+        /* border: 1px solid black; */
+      }
+      .search-bar {
+        width: 350px;
+        height: 50px;
+        border: 3px solid #6ec953;
+        border-radius: 50px;
+        display: flex;
+        margin-left: 20px;
+        margin-top: 25px;
+      }
+      .search-btn {
+        width: 50px;
+        height: 50px;
+        /* border: 1px solid black; */
+        background-image: url(#);
+        background-position: center;
+        background-size: cover;
+        border: 0px;
+        outline: 0px;
+      }
+      .search-txt {
+        width: 250px;
+        margin-left: 20px;
+        border: 0px;
+        outline: 0px;
+      }
+      .container {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 배너 컨테이너 */
+      .rollingbanner {
+        position: absolute;
+        width: 160px;
+        height: 32px;
+        font-size: 0.875rem;
+        letter-spacing: -1px;
+        padding: 7px 15px;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+        border-radius: 16px;
+        align-items: center;
+        right: 510px;
+        top: 90px;
+      }
+      /* 타이틀 */
+      .rollingbanner > .title {
+        font-weight: bold;
+        float: left;
+        padding-right: 10px;
+      }
+      /* 롤링 배너 */
+      .rollingbanner > .wrap {
+        position: relative;
+        width: auto;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+      .rollingbanner ul {
+        list-style: none;
+      }
+      .rollingbanner li {
+        position: absolute;
+        top: -18px;
+        left: 0;
+      }
+      /* 이전, 현재, 다음 롤링 배너 표시 */
+      .rollingbanner li.prev {
+        top: 18px;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner li.current {
+        top: 0;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner li.next {
+        top: -18px;
+      }
+      .rollingbanner a {
+        display: block;
+        display: -webkit-box;
+        text-decoration: none;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #000;
+        padding-top: 4px;
+      }
+      /* 반대 방향으로 진행 */
+      .rollingbanner.reverse li.prev {
+        top: -18px;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner.reverse li.next {
+        top: 18px;
+      }
+      .footer {
+        /* border: 1px solid black; */
+        width: 1008px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: -65px;
+        margin-bottom: -25px;
+      }
+
+      .footer ul {
+        list-style: none;
+        margin-left: -60px;
+      }
+
+      .footer li {
+        display: inline-block;
+        margin-left: 20px;
+      }
+
+      .footer li a {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        font-weight: bold;
+      }
+
+      .footer li a:hover {
+        text-decoration: none;
+        color: #6ec953;
+      }
+      .mymusic a {
+        color: gray;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .mymusic a:hover {
+        color: #6ec953;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="ticket">
+          <a href="https://ticket.melon.com/main/index.htm" title="멜론티켓">
+            멜론티켓</a
+          >
+        </div>
+        <div class="nav">
+          <ul>
+            <li>
+              <a
+                href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm"
+                title="이용권구매"
+                >이용권구매</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.melon.com/event/vip/index.htm"
+                title="멜론라운지"
+                >멜론라운지</a
+              >
+            </li>
+
+            <li>
+              <a href="https://www.melon.com/event/index.htm" title="이벤트"
+                >이벤트</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="https://www.melon.com/customer/announce/index.htm"
+                title="공지사항"
+                >공지사항</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 착시선 -->
+      <div class="line w0_2" role="presentation"></div>
+
+      <div class="body">
+        <div class="logo" title="MelOn 로고 - 홈으로 이동"></div>
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search-txt"
+            placeholder="[멜론어학]함께 즐기며 배우는 외국어 강좌"
+          />
+          <div class="search-btn"></div>
+        </div>
+        <div class="container">
+          <div class="rollingbanner">
+            <div class="title">급상승</div>
+            <div class="wrap">
+              <ul>
+                <li class="current">
+                  <a href="#">Elemental</a>
+                </li>
+                <li class="next">
+                  <a href="#">BLACKPINK</a>
+                </li>
+
+                <li><a href="#">랄랄</a></li>
+                <li>
+                  <a href="#">화사 (Hwa Sa)</a>
+                </li>
+                <li>
+                  <a href="#">세븐틴 (SEVENTEEN)</a>
+                </li>
+                <li>
+                  <a href="#">마마무(MamaMoo)</a>
+                </li>
+                <li>
+                  <a href="#">잔나비</a>
+                </li>
+                <li>
+                  <a href="#">2NE1</a>
+                </li>
+                <li>
+                  <a href="#">YENA(최예나)</a>
+                </li>
+                <li class="prev">
+                  <a href="#">헤이즈 (Heize)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <ul>
+          <li>
+            <a href="https://www.melon.com/chart/index.htm">멜론차트</a>
+          </li>
+          <li><a href="https://www.melon.com/new/index.htm">최신음악</a></li>
+          <li>
+            <a href="https://www.melon.com/genre/song_list.htm?gnrCode=GN0100"
+              >장르음악</a
+            >
+          </li>
+          <li>
+            <a href="https://www.melon.com/dj/today/djtoday_list.htm">멜론DJ</a>
+          </li>
+          <li><a href="https://www.melon.com/tv/index.htm">멜론TV</a></li>
+          <li>
+            <a href="https://www.melon.com/artistplus/todayupdate/index.htm"
+              >스타포스트</a
+            >
+          </li>
+          <li>
+            <a href="https://www.melon.com/musicstory/today/index.htm"
+              >매거진</a
+            >
+          </li>
+          <li>
+            <a href="https://www.melon.com/melonaward/weekAward.htm"
+              >뮤직어워드</a
+            >
+          </li>
+          <li><a href="https://www.melon.com/edu/index.htm">어학</a></li>
+          <!-- 어학파트에 로그인 페이지 넣어야됨 -->
+        </ul>
+        <div class="mymusic"><a href="#"> 마이뮤직</a></div>
+      </div>
+      <hr />
+    </div>
+  </body>
+  <script>
+    let interval;
+    document.addEventListener("DOMContentLoaded", () => {
+      // 롤링 초기화
+      interval = window.setInterval(rollingCallback, 3000);
+
+      //마우스 호버시 롤링이 멈추었다 벗어나면 다시 롤링이 되도록 처리
+      document
+        .querySelector(".rollingbanner")
+        .addEventListener("mouseover", function () {
+          window.clearInterval(interval);
+        });
+      document
+        .querySelector(".rollingbanner")
+        .addEventListener("mouseout", function () {
+          interval = window.setInterval(rollingCallback, 3000);
+        });
+    });
+
+    function rollingCallback() {
+      //.prev 클래스 삭제
+      document.querySelector(".rollingbanner .prev").classList.remove("prev");
+
+      //.current -> .prev
+      let current = document.querySelector(".rollingbanner .current");
+      current.classList.remove("current");
+      current.classList.add("prev");
+
+      //.next -> .current
+      let next = document.querySelector(".rollingbanner .next");
+      //다음 목록 요소가 널인지 체크
+      if (next.nextElementSibling == null) {
+        document
+          .querySelector(".rollingbanner ul li:first-child")
+          .classList.add("next");
+      } else {
+        //목록 처음 요소를 다음 요소로 선택
+        next.nextElementSibling.classList.add("next");
+      }
+      next.classList.remove("next");
+      next.classList.add("current");
+    }
+  </script>
+</html>

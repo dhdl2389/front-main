@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .wrap {
+      .total {
         position: relative;
         width: 100%;
         height: 192px;
@@ -57,7 +57,10 @@
 
       .nav li {
         display: inline-block;
-        margin-left: 20px;
+        /* padding: 11px 7px; */
+        border-right: 1px solid black;
+        margin: 0 7px 0 0;
+        padding-right: 7px;
       }
 
       .nav li a {
@@ -82,46 +85,47 @@
       }
 
       .logo {
-        content: url(https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png);
+        /* content: url(https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png); */
         width: 142px;
         height: 99px;
         /* border: 1px solid black; */
       }
-      .search-bar {
-        width: 350px;
-        height: 50px;
+      .searchwrapper {
+        display: flex;
+        width: 300px;
+        height: 30px;
+        margin: 15px;
+        padding: 5px;
         border: 3px solid #6ec953;
-        border-radius: 50px;
+        border-radius: 30px;
+        margin-top: 33px;
+      }
+
+      .searchwrapper input {
+        flex: 9;
+        padding-left: 7px;
+        border: none;
+        margin-left: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        /* outline: none; */
+      }
+
+      .searchimg {
+        flex: 1;
+        margin-right: 8px;
+      }
+      /* .container {
         display: flex;
-        margin-left: 20px;
-        margin-top: 25px;
-      }
-      .search-btn {
-        width: 50px;
-        height: 50px;
-        /* border: 1px solid black; */
-        background-image: url(#);
-        background-position: center;
-        background-size: cover;
-        border: 0px;
-        outline: 0px;
-      }
-      .search-txt {
-        width: 250px;
-        margin-left: 20px;
-        border: 0px;
-        outline: 0px;
-      }
-      .container {
-        display: flex;
-        height: 100%;
         justify-content: center;
         align-items: center;
-      }
+        margin: 0 auto;
+      } */
 
       /* 배너 컨테이너 */
       .rollingbanner {
-        position: absolute;
         width: 160px;
         height: 32px;
         font-size: 0.875rem;
@@ -130,15 +134,14 @@
         box-sizing: border-box;
         background-color: #f0f0f0;
         border-radius: 16px;
-        align-items: center;
-        right: 510px;
-        top: 90px;
+        margin-top: 15px;
       }
       /* 타이틀 */
       .rollingbanner > .title {
         font-weight: bold;
         float: left;
         padding-right: 10px;
+        color: red;
       }
       /* 롤링 배너 */
       .rollingbanner > .wrap {
@@ -148,6 +151,8 @@
         box-sizing: border-box;
         overflow: hidden;
         border: none;
+        top: -4px;
+        left: 10px;
       }
       .rollingbanner ul {
         list-style: none;
@@ -174,7 +179,11 @@
         display: -webkit-box;
         text-decoration: none;
         -webkit-line-clamp: 1;
+        /* weblit-line-clamp는 보여지는 콘텐츠의 줄 수를 정할 수 있다 */
+        /*  하나만 보여야 되서 1로 지정*/
         -webkit-box-orient: vertical;
+        /* orient는 박스의 흐름을 정한다 vertical=세로방향 흐름 */
+        /* horizontal은 가로 방향 흐름 */
         overflow: hidden;
         color: #000;
         padding-top: 4px;
@@ -187,6 +196,7 @@
       .rollingbanner.reverse li.next {
         top: 18px;
       }
+
       .footer {
         /* border: 1px solid black; */
         width: 1008px;
@@ -231,7 +241,7 @@
     </style>
   </head>
   <body>
-    <div class="wrap">
+    <div class="total">
       <div class="header">
         <div class="ticket">
           <a href="https://ticket.melon.com/main/index.htm" title="멜론티켓">
@@ -244,7 +254,11 @@
               <a
                 href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm"
                 title="이용권구매"
-                >이용권구매</a
+              >
+                <img
+                  src="./icons8-film-soundtracks-25.png"
+                  style="width: 20px; height: 15px"
+                />이용권구매</a
               >
             </li>
             <li>
@@ -276,60 +290,110 @@
       <div class="line w0_2" role="presentation"></div>
 
       <div class="body">
-        <div class="logo" title="MelOn 로고 - 홈으로 이동"></div>
-        <div class="search-bar">
+        <!-- 로고 이미지 -->
+        <div class="logo" title="MelOn 로고 - 홈으로 이동">
+          <a href="https://www.melon.com/">
+            <img
+              src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png"
+              alt="Logo"
+              class="logo"
+            />
+          </a>
+        </div>
+        <!-- 검색바 -->
+        <div class="searchwrapper">
           <input
             type="text"
-            class="search-txt"
+            alt="검색 입력 편집창"
             placeholder="[멜론어학]함께 즐기며 배우는 외국어 강좌"
           />
-          <div class="search-btn"></div>
+          <a href="">
+            <img
+              src="./m_제목 없음.png"
+              onclick="alert('찾을 수 없습니다.')"
+              alt=""
+              class="searchimg"
+              style="width: 28px; height: 28px"
+            />
+          </a>
         </div>
-        <div class="container">
-          <div class="rollingbanner">
-            <div class="title">급상승</div>
-            <div class="wrap">
-              <ul>
-                <li class="current">
-                  <a href="#">Elemental</a>
-                </li>
-                <li class="next">
-                  <a href="#">BLACKPINK</a>
-                </li>
+        <div class="rollingbanner">
+          <div class="title">HOT</div>
+          <div class="wrap">
+            <ul>
+              <li class="current">
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4&section="
+                  >(여자)아이들</a
+                >
+              </li>
+              <li class="next">
+                <a
+                  href="https://www.melon.com/artist/timeline.htm?artistId=995169"
+                  >BLACKPINK</a
+                >
+              </li>
 
-                <li><a href="#">랄랄</a></li>
-                <li>
-                  <a href="#">화사 (Hwa Sa)</a>
-                </li>
-                <li>
-                  <a href="#">세븐틴 (SEVENTEEN)</a>
-                </li>
-                <li>
-                  <a href="#">마마무(MamaMoo)</a>
-                </li>
-                <li>
-                  <a href="#">잔나비</a>
-                </li>
-                <li>
-                  <a href="#">2NE1</a>
-                </li>
-                <li>
-                  <a href="#">YENA(최예나)</a>
-                </li>
-                <li class="prev">
-                  <a href="#">헤이즈 (Heize)</a>
-                </li>
-              </ul>
-            </div>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EB%9E%84%EB%9E%84&section=&mwkLogType=T"
+                  >랄랄</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%ED%99%94%EC%82%AC&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >화사 (Hwa Sa)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%84%B8%EB%B8%90%ED%8B%B4+%28SEVENTEEN%29&section="
+                  >세븐틴 (SEVENTEEN)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EB%A7%88%EB%A7%88%EB%AC%B4&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >마마무(MamaMoo)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%9E%94%EB%82%98%EB%B9%84&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >잔나비</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >2NE1</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >YENA(최예나)</a
+                >
+              </li>
+              <li class="prev">
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%ED%97%A4%EC%9D%B4%EC%A6%88&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >헤이즈 (Heize)</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </div>
+      <!-- 급상승 롤링 -->
+      <!-- <div class="container"> -->
 
+      <!-- </div> -->
       <div class="footer">
+        <!-- 아래 배너 -->
         <ul>
-          <li>
-            <a href="https://www.melon.com/chart/index.htm">멜론차트</a>
-          </li>
+          <li><a href="https://www.melon.com/chart/index.htm">멜론차트</a></li>
           <li><a href="https://www.melon.com/new/index.htm">최신음악</a></li>
           <li>
             <a href="https://www.melon.com/genre/song_list.htm?gnrCode=GN0100"
@@ -358,6 +422,7 @@
           <li><a href="https://www.melon.com/edu/index.htm">어학</a></li>
           <!-- 어학파트에 로그인 페이지 넣어야됨 -->
         </ul>
+        <!-- 로그인 페이지 넣어야됨 마이뮤직 -->
         <div class="mymusic"><a href="#"> 마이뮤직</a></div>
       </div>
       <hr />
@@ -365,21 +430,21 @@
   </body>
   <script>
     let interval;
+    // addEventListener는 이벤트를 등록하는 방식이며 여러개의 이벤트핸들러를 등록가능
     document.addEventListener("DOMContentLoaded", () => {
       // 롤링 초기화
       interval = window.setInterval(rollingCallback, 3000);
-
       //마우스 호버시 롤링이 멈추었다 벗어나면 다시 롤링이 되도록 처리
-      document
-        .querySelector(".rollingbanner")
-        .addEventListener("mouseover", function () {
-          window.clearInterval(interval);
-        });
-      document
-        .querySelector(".rollingbanner")
-        .addEventListener("mouseout", function () {
-          interval = window.setInterval(rollingCallback, 3000);
-        });
+      //   document
+      //     .querySelector(".rollingbanner")
+      //     .addEventListener("mouseover", function () {
+      //       window.clearInterval(interval);
+      //     });
+      //   document
+      //     .querySelector(".rollingbanner")
+      //     .addEventListener("mouseout", function () {
+      //       interval = window.setInterval(rollingCallback, 3000);
+      //     });
     });
 
     function rollingCallback() {

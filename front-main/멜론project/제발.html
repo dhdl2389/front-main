@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .total {
+        position: relative;
+        width: 100%;
+        height: 192px;
+        /* border: 1px solid black; */
+        border-top: 4px solid #6ec953;
+        margin-top: -8px;
+        font-family: "돋움", Dotum, "맑은 고딕", "Malgun Gothic", "Apple Gothic",
+          sans-serif;
+      }
+      .rollingBtn {
+        border: 0px solid black;
+        font-size: smaller;
+        border-radius: 30px;
+        background-color: #6ec953;
+        color: white;
+        text-align: center;
+        margin-top: 15px;
+        width: 52px;
+        height: 19px;
+      }
+      /* 배너 컨테이너 */
+      .rollingbanner {
+        width: 160px;
+        height: 32px;
+        font-size: 0.8rem;
+        letter-spacing: -1px;
+        padding: 7px 15px;
+        box-sizing: border-box;
+        /* background-color: #f0f0f0; */
+        /* border-radius: 16px; */
+        margin-top: 21px;
+      }
+      /* 타이틀 */
+      /* .rollingbanner > .title {
+        font-weight: bold;
+        float: left;
+        padding-right: 10px;
+        color: red;
+      } */
+      /* 롤링 배너 */
+      .rollingbanner > .wrap {
+        position: relative;
+        width: auto;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+        top: -5px;
+        left: -1px;
+      }
+      .rollingbanner ul {
+        list-style: none;
+      }
+      .rollingbanner li {
+        position: absolute;
+        top: -18px;
+        left: 0;
+      }
+      /* 이전, 현재, 다음 롤링 배너 표시 */
+      .rollingbanner li.prev {
+        top: 18px;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner li.current {
+        top: 0;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner li.next {
+        top: -18px;
+      }
+      .rollingbanner a {
+        display: block;
+        display: -webkit-box;
+        text-decoration: none;
+        -webkit-line-clamp: 1;
+        /* weblit-line-clamp는 보여지는 콘텐츠의 줄 수를 정할 수 있다 */
+        /*  하나만 보여야 되서 1로 지정*/
+        -webkit-box-orient: vertical;
+        /* orient는 박스의 흐름을 정한다 vertical=세로방향 흐름 */
+        /* horizontal은 가로 방향 흐름 */
+        overflow: hidden;
+        color: #000;
+        padding-top: 4px;
+      }
+      /* 반대 방향으로 진행 */
+      .rollingbanner.reverse li.prev {
+        top: -18px;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner.reverse li.next {
+        top: 18px;
+      }
+      .hidewrap {
+        position: absolute;
+        border: 1px solid black;
+        list-style: none;
+        width: auto;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        /* border: none; */
+        top: -22px;
+        left: -30px;
+        z-index: 9999;
+      }
+
+      .asdf {
+        background-color: white;
+        /* border: 1px solid black; */
+
+        opacity: 0;
+        margin: 0 auto;
+      }
+
+      .hidewrap:hover .asdf {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="total">
+      <ul class="hidewrap">
+        <li class="asdf">1111111</li>
+        <li class="asdf">22222222222</li>
+        <li class="asdf">333333333</li>
+        <li class="asdf">444444444</li>
+        <li class="asdf">5555555555</li>
+        <li class="asdf">6666666666</li>
+        <li class="asdf">777777777777</li>
+        <li class="asdf">87888888888</li>
+        <li class="asdf">999999999999</li>
+        <li class="asdf">103333333333333</li>
+      </ul>
+      <div class="rollingbanner">
+        <div class="wrap">
+          <ul class="innerwrap">
+            <li class="current">
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4&section="
+                >1. (여자)아이들</a
+              >
+            </li>
+            <li class="next">
+              <a
+                href="https://www.melon.com/artist/timeline.htm?artistId=995169"
+                >2. BLACKPINK</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=%EB%9E%84%EB%9E%84&section=&mwkLogType=T"
+                >3. 랄랄</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=%ED%99%94%EC%82%AC&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                >4. 화사 (Hwa Sa)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=%EC%84%B8%EB%B8%90%ED%8B%B4+%28SEVENTEEN%29&section="
+                >5. 세븐틴 (SEVENTEEN)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=%EB%A7%88%EB%A7%88%EB%AC%B4&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                >6. 마마무(MamaMoo)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=%EC%9E%94%EB%82%98%EB%B9%84&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                >7. 잔나비</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                >8. 쿨(COOL)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                >9. YENA(최예나)</a
+              >
+            </li>
+            <li class="prev">
+              <a
+                href="https://www.melon.com/search/total/index.htm?q=%ED%97%A4%EC%9D%B4%EC%A6%88&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                >10. 헤이즈 (Heize)</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let interval;
+    // addEventListener는 이벤트를 등록하는 방식이며 여러개의 이벤트핸들러를 등록가능
+    document.addEventListener("DOMContentLoaded", () => {
+      // 롤링 초기화
+      interval = window.setInterval(rollingCallback, 3000);
+      //마우스 호버시 롤링이 멈추었다 벗어나면 다시 롤링이 되도록 처리
+      //   document
+      //     .querySelector(".rollingbanner")
+      //     .addEventListener("mouseover", function () {
+      //       window.clearInterval(interval);
+      //     });
+      //   document
+      //     .querySelector(".rollingbanner")
+      //     .addEventListener("mouseout", function () {
+      //       interval = window.setInterval(rollingCallback, 3000);
+      //     });
+    });
+
+    function rollingCallback() {
+      //.prev 클래스 삭제
+      document.querySelector(".rollingbanner .prev").classList.remove("prev");
+
+      //.current -> .prev
+      let current = document.querySelector(".rollingbanner .current");
+      current.classList.remove("current");
+      current.classList.add("prev");
+
+      //.next -> .current
+      let next = document.querySelector(".rollingbanner .next");
+      //다음 목록 요소가 널인지 체크
+      if (next.nextElementSibling == null) {
+        document
+          .querySelector(".rollingbanner ul li:first-child")
+          .classList.add("next");
+      } else {
+        //목록 처음 요소를 다음 요소로 선택
+        next.nextElementSibling.classList.add("next");
+      }
+      next.classList.remove("next");
+      next.classList.add("current");
+    }
+  </script>
+</html>

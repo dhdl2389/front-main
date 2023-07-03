@@ -58,7 +58,7 @@
       .nav li {
         display: inline-block;
         /* padding: 11px 7px; */
-        border-right: 1px solid black;
+        /* border-right: 1px solid black; */
         margin: 0 7px 0 0;
         padding-right: 7px;
       }
@@ -112,6 +112,9 @@
 
         /* outline: none; */
       }
+      input:focus::placeholder {
+        color: transparent;
+      }
 
       .searchimg {
         flex: 1;
@@ -123,26 +126,45 @@
         align-items: center;
         margin: 0 auto;
       } */
-
+      /* .rollingbanner :hover {
+        display: block;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        z-index: 9999;
+      } */
+      .rollingBtn {
+        border: 0px solid black;
+        font-size: smaller;
+        border-radius: 30px;
+        background-color: #6ec953;
+        color: white;
+        text-align: center;
+        margin-top: 15px;
+        width: 52px;
+        height: 19px;
+      }
       /* 배너 컨테이너 */
       .rollingbanner {
         width: 160px;
         height: 32px;
-        font-size: 0.875rem;
+        font-size: 0.8rem;
         letter-spacing: -1px;
         padding: 7px 15px;
         box-sizing: border-box;
-        background-color: #f0f0f0;
-        border-radius: 16px;
-        margin-top: 15px;
+        /* background-color: #f0f0f0; */
+        /* border-radius: 16px; */
+        margin-top: 21px;
       }
       /* 타이틀 */
-      .rollingbanner > .title {
+      /* .rollingbanner > .title {
         font-weight: bold;
         float: left;
         padding-right: 10px;
         color: red;
-      }
+      } */
       /* 롤링 배너 */
       .rollingbanner > .wrap {
         position: relative;
@@ -151,8 +173,8 @@
         box-sizing: border-box;
         overflow: hidden;
         border: none;
-        top: -4px;
-        left: 10px;
+        top: -5px;
+        left: -1px;
       }
       .rollingbanner ul {
         list-style: none;
@@ -195,6 +217,8 @@
       }
       .rollingbanner.reverse li.next {
         top: 18px;
+      }
+      .wrap:hover .innerwrap {
       }
 
       .footer {
@@ -317,69 +341,69 @@
             />
           </a>
         </div>
+        <button class="rollingBtn">급상승</button>
         <div class="rollingbanner">
-          <div class="title">HOT</div>
           <div class="wrap">
-            <ul>
+            <ul class="innerwrap">
               <li class="current">
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4&section="
-                  >(여자)아이들</a
+                  >1. (여자)아이들</a
                 >
               </li>
               <li class="next">
                 <a
                   href="https://www.melon.com/artist/timeline.htm?artistId=995169"
-                  >BLACKPINK</a
+                  >2. BLACKPINK</a
                 >
               </li>
 
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%EB%9E%84%EB%9E%84&section=&mwkLogType=T"
-                  >랄랄</a
+                  >3. 랄랄</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%ED%99%94%EC%82%AC&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >화사 (Hwa Sa)</a
+                  >4. 화사 (Hwa Sa)</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%EC%84%B8%EB%B8%90%ED%8B%B4+%28SEVENTEEN%29&section="
-                  >세븐틴 (SEVENTEEN)</a
+                  >5. 세븐틴 (SEVENTEEN)</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%EB%A7%88%EB%A7%88%EB%AC%B4&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >마마무(MamaMoo)</a
+                  >6. 마마무(MamaMoo)</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%EC%9E%94%EB%82%98%EB%B9%84&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >잔나비</a
+                  >7. 잔나비</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >2NE1</a
+                  >8. 쿨(COOL)</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >YENA(최예나)</a
+                  >9. YENA(최예나)</a
                 >
               </li>
               <li class="prev">
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%ED%97%A4%EC%9D%B4%EC%A6%88&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >헤이즈 (Heize)</a
+                  >10. 헤이즈 (Heize)</a
                 >
               </li>
             </ul>

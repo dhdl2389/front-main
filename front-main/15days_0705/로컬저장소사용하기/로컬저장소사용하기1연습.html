@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let search = [
+        "RED PLANET",
+        "SEOUL",
+        "Red Diary ",
+        "Hidden Track",
+        "Butterfly Effect",
+        "LOVE",
+      ];
+
+      let result = JSON.stringify(search);
+      console.log(search);
+      console.log(result);
+
+      let bS =
+        '["RED PLANET", "SEOUL", "Red Diary ","Hidden Track", "Butterfly Effect","LOVE"]';
+
+      localStorage.setItem("searches", bS);
+
+      let sSearches = localStorage.getItem("searches");
+      alert("볼빨간사춘기" + sSearches);
+
+      let oSearches = JSON.parse(sSearches);
+      console.log(oSearches);
+    </script>
+  </body>
+</html>

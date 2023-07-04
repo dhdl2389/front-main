@@ -47,8 +47,10 @@
         color: red;
       } */
       /* 롤링 배너 */
+
       .rollingbanner > .wrap {
         position: relative;
+        /* border: 10px solid black; */
         width: auto;
         height: 100%;
         box-sizing: border-box;
@@ -101,7 +103,7 @@
       }
       .hidewrap {
         position: absolute;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         list-style: none;
         width: auto;
         height: 100%;
@@ -116,11 +118,14 @@
       .asdf {
         background-color: white;
         /* border: 1px solid black; */
-
         opacity: 0;
         margin: 0 auto;
       }
 
+      .hidewrap:hover {
+        opacity: 1;
+        border: 1px solid black;
+      }
       .hidewrap:hover .asdf {
         opacity: 1;
       }
@@ -129,83 +134,82 @@
   <body>
     <div class="total">
       <ul class="hidewrap">
-        <li class="asdf">1111111</li>
-        <li class="asdf">22222222222</li>
-        <li class="asdf">333333333</li>
-        <li class="asdf">444444444</li>
-        <li class="asdf">5555555555</li>
-        <li class="asdf">6666666666</li>
-        <li class="asdf">777777777777</li>
-        <li class="asdf">87888888888</li>
-        <li class="asdf">999999999999</li>
-        <li class="asdf">103333333333333</li>
+        <li class="asdf">1. (여자)아이들</li>
+        <li class="asdf">2. BLACKPINK</li>
+        <li class="asdf">3. 랄랄</li>
+        <li class="asdf">4. 화사</li>
+        <li class="asdf">5. 세븐틴 (SEVENTEEN)</li>
+        <li class="asdf">6. 마마무 (MamaMoo)</li>
+        <li class="asdf">7. 잔나비</li>
+        <li class="asdf">8. 쿨 (COOL)</li>
+        <li class="asdf">9. YENA (최예나)</li>
+        <li class="asdf">10. 헤이즈 (Heize)</li>
       </ul>
-      <div class="rollingbanner">
-        <div class="wrap">
-          <ul class="innerwrap">
-            <li class="current">
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4&section="
-                >1. (여자)아이들</a
-              >
-            </li>
-            <li class="next">
-              <a
-                href="https://www.melon.com/artist/timeline.htm?artistId=995169"
-                >2. BLACKPINK</a
-              >
-            </li>
+    </div>
+    <div class="rollingbanner">
+      <div class="wrap">
+        <ul class="innerwrap">
+          <li class="current">
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4&section="
+              >1. (여자)아이들</a
+            >
+          </li>
+          <li class="next">
+            <a href="https://www.melon.com/artist/timeline.htm?artistId=995169"
+              >2. BLACKPINK</a
+            >
+          </li>
 
-            <li>
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=%EB%9E%84%EB%9E%84&section=&mwkLogType=T"
-                >3. 랄랄</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=%ED%99%94%EC%82%AC&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                >4. 화사 (Hwa Sa)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=%EC%84%B8%EB%B8%90%ED%8B%B4+%28SEVENTEEN%29&section="
-                >5. 세븐틴 (SEVENTEEN)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=%EB%A7%88%EB%A7%88%EB%AC%B4&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                >6. 마마무(MamaMoo)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=%EC%9E%94%EB%82%98%EB%B9%84&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                >7. 잔나비</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                >8. 쿨(COOL)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                >9. YENA(최예나)</a
-              >
-            </li>
-            <li class="prev">
-              <a
-                href="https://www.melon.com/search/total/index.htm?q=%ED%97%A4%EC%9D%B4%EC%A6%88&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                >10. 헤이즈 (Heize)</a
-              >
-            </li>
-          </ul>
-        </div>
+          <li>
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=%EB%9E%84%EB%9E%84&section=&mwkLogType=T"
+              >3. 랄랄</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=%ED%99%94%EC%82%AC&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+              >4. 화사 (Hwa Sa)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=%EC%84%B8%EB%B8%90%ED%8B%B4+%28SEVENTEEN%29&section="
+              >5. 세븐틴 (SEVENTEEN)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=%EB%A7%88%EB%A7%88%EB%AC%B4&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+              >6. 마마무(MamaMoo)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=%EC%9E%94%EB%82%98%EB%B9%84&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+              >7. 잔나비</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+              >8. 쿨(COOL)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+              >9. YENA(최예나)</a
+            >
+          </li>
+          <li class="prev">
+            <a
+              href="https://www.melon.com/search/total/index.htm?q=%ED%97%A4%EC%9D%B4%EC%A6%88&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+              >10. 헤이즈 (Heize)</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </body>

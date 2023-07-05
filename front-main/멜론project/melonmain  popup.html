@@ -15,6 +15,32 @@
         font-family: "돋움", Dotum, "맑은 고딕", "Malgun Gothic", "Apple Gothic",
           sans-serif;
       }
+      .pop_up_wrap {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        overflow: auto;
+      }
+      .pop_up {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .pop_up img {
+        height: 85vh;
+      }
+      .btn_close {
+        position: absolute;
+        cursor: pointer;
+        top: -30px;
+        right: 0;
+        color: #fff;
+      }
       .header {
         /* border: 1px solid black; */
         width: 1008px;
@@ -122,25 +148,12 @@
         margin-right: 8px;
       }
       /* .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-      } */
-      /* .rollingbanner :hover {
-        display: block;
-        background-color: rgb(255, 255, 255);
-        border: 1px solid black;
-        width: 200px;
-        height: 200px;
-        position: relative;
-        z-index: 9999;
-      } */
-      .rollingTotal {
-        display: flex;
-        margin-right: 50px;
-        margin-top: 260px;
-      }
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 0 auto;
+            } */
+
       .rollingBtn {
         border: 0px solid black;
         font-size: smaller;
@@ -148,28 +161,23 @@
         background-color: #6ec953;
         color: white;
         text-align: center;
+        margin-top: 15px;
         width: 52px;
         height: 19px;
-        margin-top: 8px;
       }
       /* 배너 컨테이너 */
       .rollingbanner {
         width: 160px;
         height: 32px;
         font-size: 0.8rem;
-        letter-spacing: -1px;
+        /* letter-spacing: -1px; */
         padding: 7px 15px;
         box-sizing: border-box;
-        margin-top: 30px;
-        margin-left: -210px;
+        /* background-color: #f0f0f0; */
+        /* border-radius: 16px; */
+        margin-top: 21px;
       }
-      /* 타이틀 */
-      /* .rollingbanner > .title {
-        font-weight: bold;
-        float: left;
-        padding-right: 10px;
-        color: red;
-      } */
+
       /* 롤링 배너 */
       .rollingbanner > .wrap {
         position: relative;
@@ -184,11 +192,13 @@
       .rollingbanner ul {
         list-style: none;
       }
+
       .rollingbanner li {
         position: absolute;
         top: -18px;
         left: 0;
       }
+
       /* 이전, 현재, 다음 롤링 배너 표시 */
       .rollingbanner li.prev {
         top: 18px;
@@ -216,6 +226,7 @@
         color: #000;
         padding-top: 4px;
       }
+
       /* 반대 방향으로 진행 */
       .rollingbanner.reverse li.prev {
         top: -18px;
@@ -224,33 +235,62 @@
       .rollingbanner.reverse li.next {
         top: 18px;
       }
-      .hidewrap {
+
+      .menu {
+        display: flex;
+        position: relative;
+        /* border: 1px solid black; */
+      }
+      .menu-item {
+        width: 160px;
+        height: 20px;
         /* border: 1px solid black; */
 
+        /* background-color: white; */
         list-style: none;
-        box-sizing: border-box;
-        overflow: hidden;
-        z-index: 9999;
-        font-size: smaller;
-        margin-left: 20px;
-        padding-left: 10px;
+        /* overflow: hidden; */
+        position: absolute;
+        right: 38px;
+        top: -5px;
       }
 
-      .hidewrap li {
+      .sub-menu {
+        /*display:none    <->  display:block  => transition 효과 사용못함*/
+        height: 0;
         background-color: white;
         /* border: 1px solid black; */
-        opacity: 0;
-        padding-bottom: 10px;
-        /* margin: 0 auto; */
+        border-top: 0px solid black;
+        overflow: hidden; /* 넘치는 내용은 감추기*/
+        list-style: none;
+        padding-left: 0px;
+        font-size: 0.8rem;
+        width: 145px;
+      }
+      .sub-menu a {
+        text-decoration-line: none;
+        color: #000;
+      }
+      .sub-menu li {
+        padding-left: 15px;
+        padding-bottom: 6px;
       }
 
-      .hidewrap:hover {
-        opacity: 1;
-        border: 1px solid black;
-        background-color: white;
+      .menu-item:hover {
+        /* height: 300px; */
+
+        display: visible;
+        /* border: 1px solid black; */
       }
-      .hidewrap:hover .asdf {
-        opacity: 1;
+      .menu-item:hover .sub-menu {
+        height: 100px;
+        border: 1px solid black;
+      }
+
+      .menu:hover .sub-menu {
+        height: 200px; /*height:0px  ;  overflow:hidden  -> height:300px*/
+      }
+      .menu:hover .menu-item {
+        height: 200px;
       }
 
       .footer {
@@ -298,6 +338,14 @@
     </style>
   </head>
   <body>
+    <div class="pop_up_wrap">
+      <div class="pop_up">
+        <div class="btn_close">닫기 X</div>
+        <a href="#">
+          <img src="images/main/popup.png" />
+        </a>
+      </div>
+    </div>
     <div class="total">
       <div class="header">
         <div class="ticket">
@@ -374,21 +422,8 @@
             />
           </a>
         </div>
-        <div class="rollingTotal">
-          <button class="rollingBtn">급상승</button>
-          <ul class="hidewrap">
-            <li class="asdf">1. (여자)아이들</li>
-            <li class="asdf">2. BLACKPINK</li>
-            <li class="asdf">3. 랄랄</li>
-            <li class="asdf">4. 화사</li>
-            <li class="asdf">5. 세븐틴 (SEVENTEEN)</li>
-            <li class="asdf">6. 마마무 (MamaMoo)</li>
-            <li class="asdf">7. 잔나비</li>
-            <li class="asdf">8. 쿨 (COOL)</li>
-            <li class="asdf">9. YENA (최예나)</li>
-            <li class="asdf">10. 헤이즈 (Heize)</li>
-          </ul>
-        </div>
+        <button class="rollingBtn">급상승</button>
+
         <div class="rollingbanner">
           <div class="wrap">
             <ul class="innerwrap">
@@ -438,13 +473,13 @@
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >8. 쿨(COOL)</a
+                  >8. 쿨 (COOL)</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >9. YENA(최예나)</a
+                  >9. YENA (최예나)</a
                 >
               </li>
               <li class="prev">
@@ -456,6 +491,72 @@
             </ul>
           </div>
         </div>
+        <ul class="menu">
+          <li class="menu-item">
+            <ul class="sub-menu">
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4&section="
+                  >1. (여자)아이들</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/artist/timeline.htm?artistId=995169"
+                  >2. BLACKPINK</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EB%9E%84%EB%9E%84&section=&mwkLogType=T"
+                  >3. 랄랄</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%ED%99%94%EC%82%AC&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >4. 화사 (Hwa Sa)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%84%B8%EB%B8%90%ED%8B%B4+%28SEVENTEEN%29&section="
+                  >5. 세븐틴 (SEVENTEEN)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EB%A7%88%EB%A7%88%EB%AC%B4&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >6. 마마무(MamaMoo)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%9E%94%EB%82%98%EB%B9%84&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >7. 잔나비</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >8. 쿨 (COOL)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >9. YENA (최예나)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%ED%97%A4%EC%9D%B4%EC%A6%88&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >10. 헤이즈 (Heize)</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
       <!-- 급상승 롤링 -->
       <!-- <div class="container"> -->
@@ -505,7 +606,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       // 롤링 초기화
       interval = window.setInterval(rollingCallback, 3000);
-      //마우스 호버시 롤링이 멈추었다 벗어나면 다시 롤링이 되도록 처리
+      //   // 마우스 호버시 롤링이 멈추었다 벗어나면 다시 롤링이 되도록 처리
       //   document
       //     .querySelector(".rollingbanner")
       //     .addEventListener("mouseover", function () {

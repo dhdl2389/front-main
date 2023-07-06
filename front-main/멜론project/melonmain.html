@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .total {
+      .jy_total {
         position: relative;
         width: 100%;
         height: 192px;
@@ -15,7 +15,69 @@
         font-family: "돋움", Dotum, "맑은 고딕", "Malgun Gothic", "Apple Gothic",
           sans-serif;
       }
-      .header {
+      .jy_popup-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .jy_popup-content {
+        background: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      .jy_popup-ticket {
+        /* border: 4px solid black; */
+        display: flex;
+        list-style: none;
+        width: 512px;
+        justify-content: center;
+        padding: 0;
+      }
+      .jy_popup-logo1 {
+        width: 236px;
+        height: 315px;
+        margin-right: 10px;
+      }
+      .jy_popup-logo2 {
+        width: 236px;
+        height: 315px;
+      }
+
+      .jy_popup-checkbox {
+        margin-bottom: 10px;
+      }
+      label {
+        font-size: 12px;
+        font-family: "Dotum", "돋음", "Apple Gothic", sans-serif;
+      }
+
+      .jy_popup-close {
+        background: white;
+        color: black;
+        border: 1px solid black;
+        width: 36px;
+        height: 26px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 265px;
+        font-size: 12px;
+        font-family: "Dotum", "돋음", "Apple Gothic", sans-serif;
+        letter-spacing: -1px;
+        box-shadow: 0px 0px 1px #000;
+        opacity: 0.5;
+      }
+      .jy_popup-close:hover {
+        opacity: 1;
+      }
+      .jy_header {
         /* border: 1px solid black; */
         width: 1008px;
         height: 20px;
@@ -31,31 +93,30 @@
         /* 1px아래 단위 설정 불가 흐리게해서 착시 이용 */
         width: 100%;
         margin-bottom: -40px;
-        border-bottom: 1px solid;
+        border-bottom: 2px solid;
         margin-top: 7px;
       }
 
       .w0_2 {
         opacity: 0.1;
       }
-
-      .ticket a {
+      .jy_ticket a {
         text-decoration: none;
         color: gray;
         font-weight: 300;
         font-size: 15px;
       }
-      .ticket a:hover {
+      .jy_ticket a:hover {
         color: #6ec953;
         font-weight: bolder;
         font-size: 15px;
       }
 
-      .nav ul {
+      .jy_nav ul {
         list-style: none;
       }
 
-      .nav li {
+      .jy_nav li {
         display: inline-block;
         /* padding: 11px 7px; */
         /* border-right: 1px solid black; */
@@ -63,19 +124,19 @@
         padding-right: 7px;
       }
 
-      .nav li a {
+      .jy_nav li a {
         text-decoration: none;
         font-size: 12px;
         color: gray;
         font-weight: 100;
       }
 
-      .nav li a:hover {
+      .jy_nav li a:hover {
         text-decoration: none;
         color: black;
         font-weight: bolder;
       }
-      .body {
+      .jy_body {
         /* border: 1px solid black; */
         width: 1008px;
         height: 200px;
@@ -84,14 +145,14 @@
         margin: 0 auto;
       }
 
-      .logo {
+      .jy_logo {
         /* content: url(https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png); */
         width: 142px;
         height: 99px;
         margin-left: -4px;
         /* border: 1px solid black; */
       }
-      .searchwrapper {
+      .jy_searchwrapper {
         display: flex;
         width: 300px;
         height: 30px;
@@ -102,7 +163,7 @@
         margin-top: 33px;
       }
 
-      .searchwrapper input {
+      .jy_searchwrapper input {
         flex: 9;
         padding-left: 7px;
         border: none;
@@ -117,7 +178,7 @@
         color: transparent;
       }
 
-      .searchimg {
+      .jy_searchimg {
         flex: 1;
         margin-right: 8px;
       }
@@ -235,6 +296,7 @@
         /* border: 1px solid black; */
         border-top: 0px solid black;
         overflow: hidden; /* 넘치는 내용은 감추기*/
+        text-overflow: ellipsis;
         list-style: none;
         padding-left: 0px;
         font-size: 0.8rem;
@@ -267,7 +329,7 @@
         height: 200px;
       }
 
-      .footer {
+      .jy_footer {
         /* border: 1px solid black; */
         width: 1008px;
         height: 100px;
@@ -279,47 +341,84 @@
         margin-bottom: -25px;
       }
 
-      .footer ul {
+      .jy_footer ul {
         list-style: none;
         margin-left: -60px;
       }
 
-      .footer li {
+      .jy_footer li {
         display: inline-block;
         margin-left: 20px;
       }
 
-      .footer li a {
+      .jy_footer li a {
         text-decoration: none;
         font-size: 16px;
         color: black;
         font-weight: bold;
       }
 
-      .footer li a:hover {
+      .jy_footer li a:hover {
         text-decoration: none;
         color: #6ec953;
       }
-      .mymusic a {
+      .jy_mymusic a {
         color: gray;
         font-weight: bold;
         text-decoration: none;
         margin-right: 15px;
       }
-      .mymusic a:hover {
+      .jy_mymusic a:hover {
         color: #6ec953;
       }
     </style>
   </head>
   <body>
-    <div class="total">
-      <div class="header">
-        <div class="ticket">
+    <div class="jy_total">
+      <div class="jy_popup-container">
+        <div class="jy_popup-content">
+          <ul class="jy_popup-ticket">
+            <li class="jy_popup-logo1" title="상품 프로모션">
+              <a href="https://www.melon.com/buy/pamphlet/recommend.htm">
+                <img
+                  src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20230703101526.png/melon/quality/80"
+                  alt="popup-logo1"
+                  class="jy_popup-logo1"
+                />
+              </a>
+            </li>
+            <li class="jy_popup-logo2" title="Cosm 콘서트">
+              <a
+                href="https://ticket.melon.com/performance/index.htm?prodId=208418"
+              >
+                <img
+                  src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20230703101536.png/melon/quality/80"
+                  alt="popup-logo2"
+                  class="jy_popup-logo2"
+                />
+              </a>
+            </li>
+          </ul>
+          <div class="jy_popup-bottom">
+            <input
+              class="jy_popup-checkbox"
+              type="checkbox"
+              id="popup-checkbox"
+            />
+
+            <label for="popup-checkbox">오늘 하루 이창을 열지 않음</label>
+
+            <button class="jy_popup-close">닫기</button>
+          </div>
+        </div>
+      </div>
+      <div class="jy_header">
+        <div class="jy_ticket">
           <a href="https://ticket.melon.com/main/index.htm" title="멜론티켓">
             멜론티켓</a
           >
         </div>
-        <div class="nav">
+        <div class="jy_nav">
           <ul>
             <li>
               <a
@@ -356,23 +455,22 @@
           </ul>
         </div>
       </div>
-
       <!-- 착시선 -->
       <div class="line w0_2" role="presentation"></div>
 
-      <div class="body">
+      <div class="jy_body">
         <!-- 로고 이미지 -->
-        <div class="logo" title="MelOn 로고 - 홈으로 이동">
+        <div class="jy_logo" title="MelOn 로고 - 홈으로 이동">
           <a href="https://www.melon.com/">
             <img
               src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png"
               alt="Logo"
-              class="logo"
+              class="jy_logo"
             />
           </a>
         </div>
         <!-- 검색바 -->
-        <div class="searchwrapper">
+        <div class="jy_searchwrapper">
           <input
             type="text"
             alt="검색 입력 편집창"
@@ -383,7 +481,7 @@
               src="./m_제목 없음.png"
               onclick="alert('찾을 수 없습니다.')"
               alt=""
-              class="searchimg"
+              class="jy_searchimg"
               style="width: 28px; height: 28px"
             />
           </a>
@@ -393,67 +491,16 @@
         <div class="rollingbanner">
           <div class="wrap">
             <ul class="innerwrap">
-              <li class="current">
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4&section="
-                  >1. (여자)아이들</a
-                >
-              </li>
-              <li class="next">
-                <a
-                  href="https://www.melon.com/artist/timeline.htm?artistId=995169"
-                  >2. BLACKPINK</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=%EB%9E%84%EB%9E%84&section=&mwkLogType=T"
-                  >3. 랄랄</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=%ED%99%94%EC%82%AC&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >4. 화사 (Hwa Sa)</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=%EC%84%B8%EB%B8%90%ED%8B%B4+%28SEVENTEEN%29&section="
-                  >5. 세븐틴 (SEVENTEEN)</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=%EB%A7%88%EB%A7%88%EB%AC%B4&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >6. 마마무(MamaMoo)</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=%EC%9E%94%EB%82%98%EB%B9%84&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >7. 잔나비</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >8. 쿨 (COOL)</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >9. YENA (최예나)</a
-                >
-              </li>
-              <li class="prev">
-                <a
-                  href="https://www.melon.com/search/total/index.htm?q=%ED%97%A4%EC%9D%B4%EC%A6%88&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
-                  >10. 헤이즈 (Heize)</a
-                >
-              </li>
+              <li class="current">1. (여자)아이들</li>
+              <li class="next">2. BLACKPINK</li>
+              <li>3. 랄랄</li>
+              <li>4. 화사 (Hwa Sa)</li>
+              <li>5. 세븐틴</li>
+              <li>6. 마마무(MamaMoo)</li>
+              <li>7. 잔나비</li>
+              <li>8. 쿨 (COOL)</li>
+              <li>9. YENA (최예나)</li>
+              <li class="prev">10. 헤이즈 (Heize)</li>
             </ul>
           </div>
         </div>
@@ -528,7 +575,7 @@
       <!-- <div class="container"> -->
 
       <!-- </div> -->
-      <div class="footer">
+      <div class="jy_footer">
         <!-- 아래 배너 -->
         <ul>
           <li><a href="https://www.melon.com/chart/index.htm">멜론차트</a></li>
@@ -561,10 +608,21 @@
           <!-- 어학파트에 로그인 페이지 넣어야됨 -->
         </ul>
         <!-- 로그인 페이지 넣어야됨 마이뮤직 -->
-        <div class="mymusic"><a href="#"> 마이뮤직</a></div>
+        <div class="jy_mymusic"><a href="#"> 마이뮤직</a></div>
       </div>
       <hr />
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const popupContainer = document.querySelector(".jy_popup-container");
+        const popupClose = document.querySelector(".jy_popup-close");
+
+        popupClose.addEventListener("click", function () {
+          popupContainer.style.display = "none";
+          popupClose.removeEventListener("click", closePopup);
+        });
+      });
+    </script>
   </body>
   <script>
     let interval;
@@ -572,17 +630,6 @@
     document.addEventListener("DOMContentLoaded", () => {
       // 롤링 초기화
       interval = window.setInterval(rollingCallback, 3000);
-      //   // 마우스 호버시 롤링이 멈추었다 벗어나면 다시 롤링이 되도록 처리
-      //   document
-      //     .querySelector(".rollingbanner")
-      //     .addEventListener("mouseover", function () {
-      //       window.clearInterval(interval);
-      //     });
-      //   document
-      //     .querySelector(".rollingbanner")
-      //     .addEventListener("mouseout", function () {
-      //       interval = window.setInterval(rollingCallback, 3000);
-      //     });
     });
 
     function rollingCallback() {

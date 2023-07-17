@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("학생수 입력");
+
+      let korsum = 0;
+      let koravg;
+
+      let engsum = 0;
+      let engavg;
+
+      let mathsum = 0;
+      let mathavg;
+
+      for (let i = 0; i < num; i++) {
+        let name = prompt("이름");
+        let kor = Number(prompt("kor 입력"));
+        let eng = Number(prompt("eng 입력"));
+        let math = Number(prompt("math 입력"));
+
+        let sum = kor + eng + math;
+        let avg = sum / 3;
+
+        if (avg >= 90) {
+          alert("EX");
+        } else if (avg < 60) {
+          alert("fail");
+        }
+
+        alert("이름:" + name + "개인평균:" + avg);
+
+        korsum += kor;
+        engsum = engsum + eng;
+        mathsum = mathsum + math;
+      }
+
+      koravg = korsum / num;
+      engavg = engsum / num;
+      mathavg = mathsum / num;
+
+      alert("국어" + koravg + "영어" + engavg + "수학" + mathavg);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex UI 실전 제작(5) – 반응형 이미지 갤러리</title>
+    <style>
+      /*1층*/
+      section {
+        width: 950px;
+        margin: 0 auto;
+        /* border: 1px solid black; */
+      }
+
+      .section-header {
+        /* border: 1px solid black; */
+        text-align: right;
+        padding: 30px 0px;
+      }
+
+      /*2층 search 영역*/
+
+      .search-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .search-box .search {
+        border: none;
+        border-bottom: 1px solid black;
+        font-size: 18px;
+        padding: 5px;
+
+        width: 300px;
+        box-sizing: border-box;
+        /* 조회이미지 배경으로 설정 */
+        background-image: url(./images/search.png);
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-position: right;
+      }
+      .search-box button {
+        border: none;
+        background-color: crimson;
+        color: #fff;
+        padding: 13px 60px;
+        border-radius: 6px;
+        font-size: 18px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.452);
+        transition: 0.3s;
+      }
+
+      .search-box button:hover {
+        background-color: black;
+      }
+
+      .gnb a {
+        margin: 15px;
+        /* border: 1px solid red; */
+        position: relative;
+        padding-bottom: 8px;
+        text-decoration: none;
+        color: #000;
+      }
+      .gnb a:last-child {
+        margin-right: 0;
+      }
+      .gnb a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #000;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        transition: 0.3s;
+      }
+      .gnb a:hover:after {
+        width: 100%;
+      }
+
+      /*3층*/
+
+      .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .item {
+        width: 310px;
+        height: 200px;
+        border: 1px solid black;
+
+        /* overflow*/
+        overflow: hidden;
+        position: relative;
+      }
+
+      .item img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .item .desc {
+        position: absolute;
+        background-color: antiquewhite;
+        width: 100%;
+        height: 60px;
+        left: 0;
+        bottom: -60px;
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+
+      .item:hover .desc {
+        bottom: 0px;
+      }
+      input:focus {
+        outline: none;
+      }
+
+      @media (max-width: 767px) {
+        section {
+          width: 100%;
+          padding: 20px;
+          box-sizing: border-box;
+        }
+        .search-box {
+          flex-direction: column;
+        }
+        .search-box .search {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .item {
+          width: 100%;
+        }
+        .section-header {
+          text-align: center;
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--freepik  site  무료이미지 다운로드  -->
+    <section>
+      <!--1 header-->
+      <div class="section-header">
+        <div class="gnb">
+          <a href="#none">Photoshop</a>
+          <a href="#none">Illustrator</a>
+          <a href="#none">Publishing</a>
+        </div>
+      </div>
+
+      <!--2 search영역-->
+      <div class="search-box">
+        <input
+          class="search"
+          type="text"
+          placeholder="Search"
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='Search'"
+        />
+        <button>Designer Profile</button>
+      </div>
+
+      <!--3 갤러리 wrap-->
+      <div class="items">
+        <!--갤러리 item-->
+        <div class="item">
+          <img src="images/p1.jpg" />
+
+          <!--숨은 영역-->
+          <div class="desc">
+            <h6>Image Title</h6>
+            <div class="like">
+              <span> <i class="fa fa-heart"></i> 300 Likes </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/p2.jpg" />
+
+          <!--숨은 영역-->
+          <div class="desc">
+            <h6>Image Title</h6>
+            <div class="like">
+              <span> <i class="fa fa-heart"></i> 300 Likes </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/p3.jpg" />
+
+          <!--숨은 영역-->
+          <div class="desc">
+            <h6>Image Title</h6>
+            <div class="like">
+              <span> <i class="fa fa-heart"></i> 300 Likes </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/p4.jpg" />
+
+          <!--숨은 영역-->
+          <div class="desc">
+            <h6>Image Title</h6>
+            <div class="like">
+              <span> <i class="fa fa-heart"></i> 300 Likes </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/p5.jpg" />
+
+          <!--숨은 영역-->
+          <div class="desc">
+            <h6>Image Title</h6>
+            <div class="like">
+              <span> <i class="fa fa-heart"></i> 300 Likes </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/p6.jpg" />
+
+          <!--숨은 영역-->
+          <div class="desc">
+            <h6>Image Title</h6>
+            <div class="like">
+              <span> <i class="fa fa-heart"></i> 300 Likes </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

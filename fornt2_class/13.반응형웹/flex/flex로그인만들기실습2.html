@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbit&display=swap");
+
+      body {
+        background-image: linear-gradient(
+          45deg,
+          #17b75e 25%,
+          yellow 25% 50%,
+          #17b75e 50% 75%,
+          yellow 75%
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /*보이는 화면의 높이 vh viewport height*/
+      }
+
+      .login {
+        position: relative; /* 부모 요소에 position 추가 */
+        border: 1px solid black;
+        width: 400px;
+        padding: 30px;
+        /* overflow: hidden;*/
+      }
+      .login h2 {
+        text-transform: capitalize; /*첫 글자 대문자*/
+      }
+
+      .sns-login {
+        display: flex;
+        flex-direction: row;
+      }
+      .btn1 {
+        flex: 1;
+        background-color: gold;
+        color: black;
+        margin-right: 3px;
+      }
+      .btn1 a {
+        text-decoration: none;
+      }
+
+      .btn2 {
+        flex: 1;
+        background-color: #17b75e;
+        color: black;
+      }
+      .btn2 a {
+        text-decoration: none;
+      }
+      .field {
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0;
+      }
+
+      .field label {
+        flex: 1;
+        font-weight: bolder;
+      }
+      .field input {
+        flex: 3;
+      }
+      .btn-login {
+        padding: 5px 40px;
+        border: none;
+        border-radius: 3px;
+        color: #484444;
+        margin-top: 20px;
+        background-color: #6ec953;
+        border: 1px solid black;
+      }
+
+      .loading {
+        position: absolute; /* 로딩 스피너에 position 추가 */
+        top: 50%; /* 화면의 중간에 위치하도록 수정 */
+        left: 50%; /* 화면의 중간에 위치하도록 수정 */
+        transform: translate(
+          -50%,
+          -50%
+        ); /* 정확한 가운데 위치를 위한 transform */
+        z-index: 1;
+        overflow: hidden; /* overflow 설정 유지 */
+      }
+
+      .loading div {
+        border: 9px solid orange;
+        border-radius: 50%;
+        border-color: orange orange orange transparent;
+        width: 350px;
+        height: 350px;
+        animation: spinning 5s linear infinite;
+      }
+
+      .loading1 {
+        position: absolute; /* 로딩 스피너에 position 추가 */
+        top: 50%; /* 화면의 중간에 위치하도록 수정 */
+        left: 50%; /* 화면의 중간에 위치하도록 수정 */
+        transform: translate(
+          -50%,
+          -50%
+        ); /* 정확한 가운데 위치를 위한 transform */
+        z-index: 1;
+        overflow: hidden; /* overflow 설정 유지 */
+      }
+
+      .loading1 div {
+        border: 9px solid orange;
+        border-radius: 50%;
+        border-color: orange orange orange transparent;
+        width: 600px;
+        height: 600px;
+        animation: spinning 5s linear infinite;
+      }
+
+      @keyframes spinning {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /*모바일 구간*/
+      @media (max-width: 767px) {
+        .login {
+          width: 100%;
+        }
+        .sns-login {
+          flex-direction: column;
+        }
+        .field {
+          flex-direction: column;
+        }
+        .btn1 {
+          margin: 5px 0;
+        }
+        .btn2 {
+          margin: 5px 0;
+        }
+        .btn-login {
+          width: 100%;
+        }
+
+        .loading {
+          position: absolute; /* 로딩 스피너에 position 추가 */
+          top: 50%; /* 화면의 중간에 위치하도록 수정 */
+          left: 50%; /* 화면의 중간에 위치하도록 수정 */
+          transform: translate(
+            -50%,
+            -50%
+          ); /* 정확한 가운데 위치를 위한 transform */
+          z-index: 1;
+          overflow: hidden; /* overflow 설정 유지 */
+        }
+
+        .loading div {
+          border: 9px solid orange;
+          border-radius: 50%;
+          border-color: orange orange orange transparent;
+          width: 350px;
+          height: 350px;
+          animation: spinning 5s linear infinite;
+        }
+
+        .loading1 {
+          position: absolute; /* 로딩 스피너에 position 추가 */
+          top: 50%; /* 화면의 중간에 위치하도록 수정 */
+          left: 50%; /* 화면의 중간에 위치하도록 수정 */
+          transform: translate(
+            -50%,
+            -50%
+          ); /* 정확한 가운데 위치를 위한 transform */
+          z-index: 1;
+          overflow: hidden; /* overflow 설정 유지 */
+        }
+
+        .loading1 div {
+          border: 9px solid orange;
+          border-radius: 50%;
+          border-color: orange orange orange transparent;
+          width: 600px;
+          height: 600px;
+          animation: spinning 5s linear infinite;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <div class="loading"><div></div></div>
+      <div class="loading1"><div></div></div>
+      <h2>reservation</h2>
+      <div class="sns-login">
+        <button class="btn1 kakao">
+          <a
+            href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fencode_state%3Dtrue%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fmember.melon.com%252Foauth.htm%26state%3DCRYT_VbWFeHld9%2540u%252FJka%252FJqAtEeZmKATaEy5Dk8t3PqwmSn4J88SLV1KcRuu%252Fv7BO1bca6r3vuns08DoR084duqBV8w%253D%253D%26through_account%3Dtrue%26prompt%3Dnull%26client_id%3D6cfb479f221a5adc670fe301e1b6690c"
+            >카카오 로그인
+          </a>
+        </button>
+        <button class="btn2 kakao">
+          <a
+            href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com%2F&locale=ko_KR&svctype=1&disposable="
+            >네이버 로그인</a
+          >
+        </button>
+      </div>
+      <div class="field">
+        <label for="id">아이디</label>
+        <input
+          type="text"
+          id="id"
+          placeholder="아이디 입력"
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='아이디 입력'"
+        />
+      </div>
+      <div class="field">
+        <label for="email">이메일</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="이메일 입력"
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='이메일 입력'"
+        />
+      </div>
+      <div class="field">
+        <label for="pw">비밀번호</label>
+        <input
+          type="password"
+          id="pw"
+          placeholder="비밀번호 입력"
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='비밀번호 입력'"
+        />
+      </div>
+      <button class="btn-login">로그인</button>
+    </div>
+  </body>
+</html>

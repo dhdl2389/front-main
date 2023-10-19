@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const REST_API_KEY = "ffed10b77b68ff1506559063f0ed1868";
+      const REDIRECT_URI = "http://localhost:8090/auth/kakao/callback";
+
+      export const KAKAO_AUTH_URL =
+        "https://kauth.kakao.com/oauth/authorize?client_id=${ffed10b77b68ff1506559063f0ed1868}&redirect_uri=${http://localhost:8090/auth/kakao/callback}&response_type=code";
+
+      import { KAKAO_AUTH_URL } from "https://kauth.kakao.com/auth/authorize?client_id=${ffed10b77b68ff1506559063f0ed1868}&redirect_uri=${http://localhost:8090/auth/kakao/callback}&response_type=code";
+    </script>
+    <button href="{KAKAO_AUTH_URL}">카카오로 로그인하기</button>
+  </body>
+</html>

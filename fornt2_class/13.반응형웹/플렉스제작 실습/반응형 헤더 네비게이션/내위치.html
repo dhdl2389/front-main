@@ -638,20 +638,24 @@
         }
 
         if (locationsWithinRange.length > 0) {
-          let userChoice = prompt(
-            `여러 지역이 ${desiredRange}km 이내에 있습니다. 아래에서 선택해주세요:\n${locationsWithinRange
-              .map(
-                (loc, index) =>
-                  `${index + 1}. ${loc.locCode} - ${loc.detailLoc}`
-              )
-              .join("\n")}`
-          );
+          if (locationsWithinRange.length === 1) {
+            return `${locationsWithinRange[0].locCode} - ${locationsWithinRange[0].detailLoc}`;
+          } else {
+            let userChoice = prompt(
+              `여러 지역이 ${desiredRange}km 이내에 있습니다. 아래에서 선택해주세요:\n${locationsWithinRange
+                .map(
+                  (loc, index) =>
+                    `${index + 1}. ${loc.locCode} - ${loc.detailLoc}`
+                )
+                .join("\n")}`
+            );
 
-          userChoice = parseInt(userChoice);
-          if (userChoice && userChoice <= locationsWithinRange.length) {
-            return `${locationsWithinRange[userChoice - 1].locCode} - ${
-              locationsWithinRange[userChoice - 1].detailLoc
-            }`;
+            userChoice = parseInt(userChoice);
+            if (userChoice && userChoice <= locationsWithinRange.length) {
+              return `${locationsWithinRange[userChoice - 1].locCode} - ${
+                locationsWithinRange[userChoice - 1].detailLoc
+              }`;
+            }
           }
         }
 
